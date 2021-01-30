@@ -33,4 +33,4 @@ jobs:
       run: dotnet test --no-build --verbosity normal
       
     - name: Publish
-      run: dotnet publish --no-build -configuration Release -output ${{ env.WEBAPP_PUBLISH_PATH }}
+      run: dotnet publish --no-build -output ${{ env.WEBAPP_PUBLISH_PATH }}
