@@ -27,10 +27,10 @@ jobs:
       run: dotnet restore
       
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore --configuration Release
       
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --configuration Release --verbosity normal
       
     - name: Publish
       run: dotnet publish --configuration Release --no-build --output ${{ env.WEBAPP_PUBLISH_PATH }}
