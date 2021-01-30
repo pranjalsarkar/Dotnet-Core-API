@@ -9,7 +9,7 @@ on:
 env:
   WEBAPP_NAME: dotnet-core-api
   WEBAPP_PUBLISH_PATH: ./published
-  DOTNET_CORE_VERSION: '2.2.8'
+  DOTNET_CORE_VERSION: '2.1'
 
 jobs:
   build:
