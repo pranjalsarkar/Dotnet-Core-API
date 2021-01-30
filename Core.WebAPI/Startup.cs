@@ -46,7 +46,7 @@ namespace Core.WebAPI
                 options.AddPolicy(MyAllowSpecificOrigins,
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000", "http://localhost:4200", "http://localhost:4300").AllowAnyHeader().AllowAnyMethod();
+                    builder.WithOrigins("http://localhost:3000", "http://localhost:4200", "http://localhost:4300", "http://10.11.130.168").AllowAnyHeader().AllowAnyMethod();
                 });
             });
 
