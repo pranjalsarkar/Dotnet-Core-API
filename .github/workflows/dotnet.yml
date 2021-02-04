@@ -5,6 +5,14 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        default: 'warning'
+      tags:
+        description: 'Test scenario tags'  
     
 env:
   WEBAPP_NAME: dotnet-core-api
@@ -17,6 +25,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - run: |
+        echo "Log level: ${{ github.event.inputs.logLevel }}"
+        echo "Tags: ${{ github.event.inputs.tags }}" 
+        
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
@@ -34,3 +46,5 @@ jobs:
       
     - name: Publish
       run: dotnet publish --configuration Release --no-build --output ${{ env.WEBAPP_PUBLISH_PATH }}
+      
+  
